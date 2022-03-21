@@ -5,12 +5,23 @@ module.exports = {
     run: async function runAll(bot, message) {
         const {client, prefix, owners} = bot
 
-        if (!message.guild) return 
+        if (!message.guild) return;
 
-        if (message.author.bot) return 
+        if (message.author.bot) return;
 
-        if (!message.content.startsWith(prefix))
-            return 
+        if (!message.content.startsWith(prefix)){
+            client.triggers.forEach((V, K) => {
+                if(message.content.toLowerCase().includes(K)){
+                    try{
+                        message.reply(V)
+                    }
+                    catch(err){
+                        console.error(err)
+                    }
+                }
+            });
+            return;
+        } 
 
         const args = message.content.slice(prefix.length).trim().split(/ +/g)
         const cmdstr = args.shift().toLowerCase()

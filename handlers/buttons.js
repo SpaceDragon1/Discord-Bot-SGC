@@ -6,7 +6,7 @@ module.exports = (bot, reload) => {
 
 	let buttons = getFiles("./buttons/", ".js")
 
-	if (buttons.legnth === 0) {
+	if (buttons.length === 0) {
 		console.log("No buttons to load")
 	}
 
@@ -15,4 +15,5 @@ module.exports = (bot, reload) => {
 		const button = require(`../buttons/${f}`)
 		client.buttons.set(button.name, button)
 	})
+	console.log(`Loaded ${client.buttons.size} buttons`)
 }
