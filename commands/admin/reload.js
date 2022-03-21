@@ -31,6 +31,7 @@ module.exports = {
                 client.loadButtons(bot, true);
             break;
 
+            case "trigger":
             case "triggers":
                 await msg.edit("Reloading triggers:");
                 client.loadTriggers(bot, true);

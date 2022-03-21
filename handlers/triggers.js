@@ -11,6 +11,7 @@ module.exports = async (bot, reload) => {
 	}
 
     triggers.forEach((f) => {
+        if (reload) delete require.cache[require.resolve(`../triggers/${f}`)]
         try{
             const data = fs.readFileSync(`./triggers/${f}`)
             const triggerData = JSON.parse(data)
