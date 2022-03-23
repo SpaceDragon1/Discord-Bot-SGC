@@ -33,6 +33,6 @@ module.exports = {
         
         const msg = await message.reply("Reloading triggers:");
         client.loadTriggers(bot, true);
-        await msg.edit("Reload complete!")
+        await msg.edit(`Trigger \'${args[0]}\' with reaction \'${args[1]}\' added!`)
     }
 }

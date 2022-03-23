@@ -4,6 +4,7 @@ const run = async (client, interation) => {
 }
 module.exports = {
 	name: "ping",
+	category: "etc",
 	description: "Replies with pong.",
 	run,
 }

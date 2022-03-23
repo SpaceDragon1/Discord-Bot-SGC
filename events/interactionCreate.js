@@ -25,17 +25,28 @@ const handleButton = (bot, interaction) => {
 }
 
 const handleSlashcommand = (bot, interaction) => {
-    const {client} = bot
+    const {client, owners} = bot
 
     if(!interaction.inGuild()) 
         return interaction.reply("This command can only be used in a server")
 
     const slashcmd = client.slashcommands.get(interaction.commandName)
 
-    if(!slashcmd) return interaction.reply("Invalid slash command")
+    if(!slashcmd) return interaction.reply("Invalid command")
 
-    if(slashcmd.perm && !interaction.member.permissions.has(slashcmd.perm))
-        return interaction.reply("You do not have permission to run this command")
+    let member = interaction.member;
 
-    slashcmd.run(client, interaction)
+    if (slashcmd.devOnly && !owners.includes(member.id)){
+        return interaction.reply("This command is only available to the bot owners")
+    }
+
+    if (slashcmd.perms && !interaction.member.permissions.has(slashcmd.perms))
+			return interaction.reply("You do not have permission to use this command")
+
+    try{
+        slashcmd.run(client, interaction);
+    }
+    catch(err){
+        console.error(err);
+    }
 }

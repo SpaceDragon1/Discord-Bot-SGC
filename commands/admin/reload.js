@@ -8,7 +8,7 @@ module.exports = {
 
         bot.client = client;
 
-        const msg = await message.reply("Reloading");
+        const msg = await message.reply("Reloading...");
 
         switch(args.toString().toLowerCase()){
             case "events":

@@ -21,8 +21,8 @@ let bot = {
 client.loadSlashCommands = (bot, reload) => require("./handlers/slashcommands")(bot, reload)
 client.loadSlashCommands(bot, false)
 
-//const guildId = "953660947854131200";
-const guildId = "797874089221947424"
+const guildId = "953660947854131200";
+//const guildId = "797874089221947424"
 const clientId = "953656237097115728"
 
 /*const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);

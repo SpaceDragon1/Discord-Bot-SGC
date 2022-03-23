@@ -27,6 +27,7 @@ const run = async (client, interation) => {
 
 module.exports = {
 	name: "timeout",
+	category: "admin",
 	description: "Timeout a member.",
 	perms: "MODERATE_MEMBERS",
 	options: [
