@@ -54,7 +54,9 @@ module.exports = {
                 client.loadTriggers(bot, true);
             break;
         }
-        await msg.edit("Reload complete!");
+        //await msg.edit("Reload complete!");
+
+        await msg.delete();
     }
 }
 

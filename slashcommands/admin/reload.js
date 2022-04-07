@@ -61,7 +61,9 @@ const run = async (client, interation) => {
     }
 
 
-    await msg.edit("Reload complete!")
+    //await msg.edit("Reload complete!")
+
+    await msg.delete();
 }
 
 module.exports = {

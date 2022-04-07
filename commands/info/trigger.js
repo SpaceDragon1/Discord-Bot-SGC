@@ -1,7 +1,7 @@
 const fs = require("fs")
 
 module.exports = {    
-    name: "triggers",
+    name: "trigger",
     category: "info",
     devOnly: false,
     run: async ({client, message, args}) => {
@@ -14,6 +14,6 @@ module.exports = {
             triggerString += `Trigger: ${t}     Reaction: ${triggerData.reaction[i]}\n`
         })
 
-        message.reply(triggerString);
+        message.reply({content: triggerString, ephemeral: false});
     }
 }

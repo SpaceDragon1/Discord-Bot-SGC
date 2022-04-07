@@ -1,5 +1,5 @@
-const { REST } = require('@discordjs/rest');
-const { Routes } = require('discord-api-types/v9');
+//const { REST } = require('@discordjs/rest');
+//const { Routes } = require('discord-api-types/v9');
 const Discord = require("discord.js");
 require("dotenv").config();
 
@@ -52,11 +52,11 @@ client.on("ready", async () => {
 
     await guild.commands.set([...client.slashcommands.values()])
 
-    const guild2 = client.guilds.cache.get("953660947854131200")
+    /*const guild2 = client.guilds.cache.get("953660947854131200")
     if (!guild2)
         console.error("Target Guild not found")
 
-    await guild2.commands.set([...client.slashcommands.values()])
+    await guild2.commands.set([...client.slashcommands.values()])*/
 
     /*client.guilds.fetch()
     const guilds = client.guilds.cache
